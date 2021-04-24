@@ -13,5 +13,4 @@ void loop()
 {
   data = bluetooth.read();
   servo.write(data);
-  delay(1000);
 }
