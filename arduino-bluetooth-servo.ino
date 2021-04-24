@@ -3,6 +3,7 @@
 SoftwareSerial bluetooth(0, 1);
 Servo servo;
 int data;
+int sens;
 void setup()
 {
   bluetooth.begin(9600);
@@ -12,6 +13,10 @@ void setup()
 void loop()
 {
   data = bluetooth.read();
+  sens = analogRead(0);
   servo.write(data);
-  delay(100);
+  if (sens >= '1'){
+      servo.write(90);
+    }
+   delay(1000);
 }
