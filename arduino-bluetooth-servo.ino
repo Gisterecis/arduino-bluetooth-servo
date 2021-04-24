@@ -2,7 +2,7 @@
 #include <Servo.h>
 SoftwareSerial bluetooth(0, 1);
 Servo servo;
-char data;
+int data;
 void setup()
 {
   bluetooth.begin(9600);
@@ -13,4 +13,5 @@ void loop()
 {
   data = bluetooth.read();
   servo.write(data);
+  delay(100);
 }
